@@ -1,0 +1,5266 @@
+{
+  "schema_version": "1.0",
+  "database_name": "global_rideshare_availability",
+  "last_updated": "2026-07-21",
+  "total_countries": 198,
+  "field_definitions": {
+    "uber_status": "Uber's own operating status in this country: nationwide | city_only | taxi_only | banned | absent | gray_area",
+    "apps": "Ranked list of all rideshare apps available, most prominent first, each with its own status field",
+    "geographic_limitations": "Specific cities/regions where service is available, if not nationwide",
+    "airport_pickup": "Rules/restrictions for ride-hail pickup at the country's main international airport(s)",
+    "local_taxi_cash_requirement": "Whether traditional taxis dominate and/or cash is required or preferred",
+    "volatile": "Boolean - true if legal status is contested, disputed, actively changing, or inconsistently reported between sources",
+    "regulatory_alert": "Boolean - true for countries with fast-moving 2024-2026 regulatory action (bans, suspensions, launches, litigation)",
+    "confidence": "high | low - low indicates thin/hard-to-verify data (small islands, conflict zones, etc), flagged for manual verification",
+    "traveler_notes": "SIM card, payment method, or other practical quirks for travelers",
+    "last_verified": "Date this record was last checked against sources"
+  },
+  "status_enum_values": [
+    "nationwide",
+    "city_only",
+    "taxi_only",
+    "banned",
+    "absent",
+    "gray_area"
+  ],
+  "advice_thresholds": {
+    "absent_or_banned": "If Uber shows no service, switch to the regional/local champion app (e.g. DiDi in China, Yandex Go in Russia, Snapp in Iran, Grab in most of SE Asia, local taxi app in the Bahamas).",
+    "taxi_only": "Expect regulated taxi-meter fares, not discounted gig-economy pricing. Budget accordingly; the app is a dispatch convenience, not a price advantage.",
+    "gray_area": "The app likely works in practice but may be barred from some airport pickup zones or contested by local taxi unions. Confirm airport-specific rules before relying on it, and consider sitting in the front seat as locals often do to reduce driver friction with authorities.",
+    "volatile_true": "Status has changed recently or is actively disputed. Re-verify within days of travel, not months.",
+    "confidence_low": "Data is thin or hard to verify (small islands, conflict zones, isolated states). Treat as directional, not definitive; a local taxi backup is recommended."
+  },
+  "countries": [
+    {
+      "country": "Algeria",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yassir",
+          "status": "city_only",
+          "pros": "Cheap, local, Algerian-born"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Heetch",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Algiers, Oran, Constantine",
+      "airport_pickup": "Informal/taxi at airport",
+      "local_taxi_cash_requirement": "Cash preferred",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "Yango withdrew 2024 over regulatory issues; use Yassir as primary.",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Angola",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Heetch",
+          "status": "city_only"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Luanda",
+      "airport_pickup": "Taxi/informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Benin",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Gozem",
+          "status": "city_only",
+          "pros": "Moto+car super-app"
+        }
+      ],
+      "geographic_limitations": "Cotonou",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Botswana",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "city_only",
+          "cons": "Limited driver pool"
+        }
+      ],
+      "geographic_limitations": "Gaborone",
+      "airport_pickup": "Taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Burkina Faso",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Gozem",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Ouagadougou",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Security constraints nationwide.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Burundi",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Wasili",
+          "status": "city_only",
+          "pros": "Local app only"
+        }
+      ],
+      "geographic_limitations": "Bujumbura",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Cabo Verde",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Fixed taxi fares",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No verified ride-hailing app; traditional taxis only.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Cameroon",
+      "region": "Africa",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Yango",
+          "status": "gray_area",
+          "pros": "Suspended 2023 but still operating"
+        },
+        {
+          "name": "Gozem",
+          "status": "city_only"
+        },
+        {
+          "name": "Easy Ride",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Douala, Yaoundé",
+      "airport_pickup": "Taxi/informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Government ordered suspension; Yango disputes and continues operating.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Central African Republic",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Traditional taxis only; security risk; data unavailable beyond taxi-only.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Chad",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Comoros",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Congo (Brazzaville)",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Heetch",
+          "status": "city_only"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Brazzaville, Pointe-Noire",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Côte d'Ivoire",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "Gozem",
+          "status": "city_only"
+        },
+        {
+          "name": "Heetch",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Abidjan",
+      "airport_pickup": "Taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Djibouti",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "RIDE",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Djibouti City",
+      "airport_pickup": "Taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "DR Congo",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "Heetch",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Kinshasa, Lubumbashi",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Egypt",
+      "region": "Africa",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "Careem",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Cairo, Alexandria, Giza",
+      "airport_pickup": "Uber/Careem allowed at Cairo airport (designated zone)",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "One of Africa's most mature ride-hailing markets.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Equatorial Guinea",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Eritrea",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Eswatini",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Leap Taxi",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Mbabane, Manzini",
+      "airport_pickup": "Taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Ethiopia",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "RIDE",
+          "status": "city_only",
+          "pros": "Local market leader"
+        },
+        {
+          "name": "Feres",
+          "status": "city_only"
+        },
+        {
+          "name": "ZayRide",
+          "status": "city_only"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "Adika",
+          "status": "city_only"
+        },
+        {
+          "name": "Little",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Addis Ababa (RIDE also in Djibouti)",
+      "airport_pickup": "Bole airport taxis; apps used",
+      "local_taxi_cash_requirement": "Cash + mobile money",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber absent. Rich local app ecosystem; past regulatory threats to the RIDE model.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Gabon",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Gozem",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Libreville",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Gambia",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "1Bena",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Banjul/Serrekunda",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Ghana",
+      "region": "Africa",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "Market leader"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Accra, Kumasi",
+      "airport_pickup": "Airport pickups operate",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Guinea",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Guinea-Bissau",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Kenya",
+      "region": "Africa",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "Market leader"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "Faras",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Little",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Nairobi, Mombasa, Kisumu",
+      "airport_pickup": "JKIA designated pickup zone",
+      "local_taxi_cash_requirement": "Cash + card + M-Pesa",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "M-Pesa mobile money integration is key to local usage.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Lesotho",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Pick Me Up",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Maseru",
+      "airport_pickup": "Taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Liberia",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Ride Liberia",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Monrovia",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Libya",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Presto",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Tripoli",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Security/political instability.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Madagascar",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Malawi",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "WeAfrica",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Lilongwe, Blantyre",
+      "airport_pickup": "Taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Mali",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Gozem",
+          "status": "city_only"
+        },
+        {
+          "name": "Heetch",
+          "status": "city_only"
+        },
+        {
+          "name": "Teliman",
+          "status": "city_only",
+          "pros": "Moto-taxi"
+        }
+      ],
+      "geographic_limitations": "Bamako",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Security constraints nationwide.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Mauritania",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Mauritius",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yugo",
+          "status": "city_only"
+        },
+        {
+          "name": "Ala-Lila",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Port Louis",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Morocco",
+      "region": "Africa",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "gray_area"
+        },
+        {
+          "name": "Careem",
+          "status": "gray_area"
+        },
+        {
+          "name": "Yango",
+          "status": "gray_area"
+        },
+        {
+          "name": "Yassir",
+          "status": "gray_area"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only",
+          "pros": "Re-entered Casablanca/Rabat/Marrakech Nov 2025"
+        }
+      ],
+      "geographic_limitations": "Casablanca, Rabat, Marrakech (Uber); broader for inDrive",
+      "airport_pickup": "Grand taxis dominate airport pickup",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Ministry of Transport declared app ride-hailing outside the legal framework Oct 2025 (unlicensed transport punishable by fines/imprisonment); Uber nonetheless returned Nov 2025 — contradictory, most-cited volatile case globally. ~77,200 taxis and ~180,000 drivers nationally; 1,500+ professional licenses revoked in 2025.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Mozambique",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Viva Taxi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Maputo",
+      "airport_pickup": "Taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Namibia",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "LEFA",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Windhoek",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Niger",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Nigeria",
+      "region": "Africa",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "nationwide",
+          "cons": "Safety concerns reported 2025"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        }
+      ],
+      "geographic_limitations": "Lagos, Abuja, Port Harcourt, Kano",
+      "airport_pickup": "FAAN parking-fee disputes at Lagos/Abuja airports",
+      "local_taxi_cash_requirement": "Cash + card + bank transfer",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "State-vs-federal regulation fights; ongoing airport-access disputes (₦45,000 FAAN parking fee).",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Rwanda",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yego",
+          "status": "city_only",
+          "pros": "Local leader, metered"
+        },
+        {
+          "name": "Move",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Kigali",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "São Tomé and Príncipe",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "city_only",
+          "cons": "Thinly sourced, sparse coverage"
+        }
+      ],
+      "geographic_limitations": "São Tomé",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Senegal",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yango",
+          "status": "gray_area"
+        },
+        {
+          "name": "Yassir",
+          "status": "gray_area"
+        },
+        {
+          "name": "Heetch",
+          "status": "gray_area"
+        },
+        {
+          "name": "Gozem",
+          "status": "gray_area"
+        }
+      ],
+      "geographic_limitations": "Dakar",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Taxi unions have sued Yango/Yassir/Heetch; new registration rules pending.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Seychelles",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Linkup Taxi",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Mahé",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Sierra Leone",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Salone Ride",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Freetown",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Somalia",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Little",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Mogadishu",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Security constraints.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "South Africa",
+      "region": "Africa",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "Market leader"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Yassir",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Johannesburg, Cape Town, Durban, Pretoria, etc.",
+      "airport_pickup": "Designated e-hailing zones at OR Tambo, Cape Town Int'l",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Periodic taxi-vs-app violence reported.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "South Sudan",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Shilu ANA",
+          "status": "city_only"
+        },
+        {
+          "name": "NileBoda",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Juba",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Active security concerns.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Sudan",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Tirhal",
+          "status": "city_only"
+        },
+        {
+          "name": "Mishwar",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Khartoum",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Active armed conflict has disrupted service.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Tanzania",
+      "region": "Africa",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Little",
+          "status": "city_only"
+        },
+        {
+          "name": "Faras",
+          "status": "city_only"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Dar es Salaam, Arusha",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Togo",
+      "region": "Africa",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Gozem",
+          "status": "gray_area",
+          "pros": "HQ country for Gozem"
+        },
+        {
+          "name": "BKG Speed",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Lomé",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Yango suspended Oct 2024 (cited operating without authorization/safety).",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Tunisia",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yassir",
+          "status": "nationwide",
+          "pros": "Market leader since Bolt exit"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Heetch",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Tunis, Sfax, Sousse",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Bolt suspended March 2025 (12M dinar/~$3.8M asset seizure over alleged tax evasion, money laundering, unlicensed operation) and ceased operations May 9 2025. Uber never entered market. State-backed fare-capping app introduced.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Uganda",
+      "region": "Africa",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "SafeBoda",
+          "status": "nationwide",
+          "pros": "Iconic local moto-taxi app"
+        },
+        {
+          "name": "Faras",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Kampala, Entebbe",
+      "airport_pickup": "Entebbe airport taxi",
+      "local_taxi_cash_requirement": "Cash + mobile money",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Zambia",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only",
+          "pros": "Launched Lusaka commission-free"
+        },
+        {
+          "name": "Unka Go",
+          "status": "city_only"
+        },
+        {
+          "name": "MyCab Zambia",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Lusaka",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Vaya Mobility",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Harare, Bulawayo",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash (USD)",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Afghanistan",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "BBR",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Kabul",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Taliban-era regulatory constraints.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Armenia",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yandex Go",
+          "status": "city_only"
+        },
+        {
+          "name": "GG Taxi",
+          "status": "city_only",
+          "pros": "Armenian local app"
+        }
+      ],
+      "geographic_limitations": "Yerevan",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Azerbaijan",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Baku",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Bahrain",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Careem",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Manama",
+      "airport_pickup": "Regulated airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Bangladesh",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Pathao",
+          "status": "nationwide",
+          "pros": "Moto+car local leader"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "Obhai",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Dhaka, Chittagong",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + mobile money",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Bhutan",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "DrukRide",
+          "status": "city_only",
+          "pros": "Local app, limited"
+        }
+      ],
+      "geographic_limitations": "Thimphu, Paro",
+      "airport_pickup": "Paro airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Brunei",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Dart",
+          "status": "nationwide",
+          "pros": "Only app; works but buggy"
+        }
+      ],
+      "geographic_limitations": "Nationwide",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber and Grab both absent.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Cambodia",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Grab",
+          "status": "nationwide"
+        },
+        {
+          "name": "Tada",
+          "status": "city_only"
+        },
+        {
+          "name": "PassApp",
+          "status": "city_only",
+          "pros": "Local tuk-tuk app"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Phnom Penh, Siem Reap",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "China",
+      "region": "Asia",
+      "uber_status": "banned",
+      "apps": [
+        {
+          "name": "DiDi",
+          "status": "nationwide",
+          "pros": "Dominant"
+        },
+        {
+          "name": "Hello",
+          "status": "city_only"
+        },
+        {
+          "name": "Caocao",
+          "status": "city_only"
+        },
+        {
+          "name": "T3",
+          "status": "city_only"
+        },
+        {
+          "name": "Amap",
+          "status": "nationwide",
+          "pros": "English-friendly aggregator for foreigners"
+        }
+      ],
+      "geographic_limitations": "Nationwide",
+      "airport_pickup": "Airport designated zones",
+      "local_taxi_cash_requirement": "App wallet (Alipay/WeChat Pay) — cash rarely accepted",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber sold its China business to DiDi in 2016 and does not operate. Foreign visitors need Alipay/WeChat or Amap's foreigner-friendly option.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Georgia",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Yandex Go",
+          "status": "city_only"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Tbilisi, Batumi",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Hong Kong",
+      "region": "Asia",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "gray_area",
+          "pros": "Legally contested but operates widely"
+        },
+        {
+          "name": "Fly Taxi",
+          "status": "city_only"
+        },
+        {
+          "name": "Tada",
+          "status": "city_only"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Territory-wide",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash + Octopus",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber operates in a long-running legal gray zone; regulatory framework has been pending for years.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "India",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Ola",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Rapido",
+          "status": "nationwide",
+          "pros": "Moto/auto leader by MAU"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        },
+        {
+          "name": "Namma Yatri",
+          "status": "city_only",
+          "pros": "Zero-commission cooperative model"
+        },
+        {
+          "name": "Bharat Taxi",
+          "status": "city_only",
+          "pros": "Zero-commission co-op, soft-launched Dec 2025"
+        }
+      ],
+      "geographic_limitations": "250+ cities",
+      "airport_pickup": "Airport designated pickup zones",
+      "local_taxi_cash_requirement": "Cash + UPI + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Rapido reported ~74M MAU by Feb 2026 vs Uber ~38M and Ola ~26-27M (India Dispatch/Moneycontrol).",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Indonesia",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Gojek",
+          "status": "nationwide",
+          "pros": "Local super-app"
+        },
+        {
+          "name": "Grab",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Jakarta + major cities",
+      "airport_pickup": "Airport pickup zones",
+      "local_taxi_cash_requirement": "Cash + e-wallet",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Ojek (motorbike taxi) culture central to Gojek's model.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Iran",
+      "region": "Asia",
+      "uber_status": "banned",
+      "apps": [
+        {
+          "name": "Snapp",
+          "status": "nationwide",
+          "pros": "Dominant, ~92% market share"
+        },
+        {
+          "name": "Tapsi",
+          "status": "city_only"
+        },
+        {
+          "name": "Tap30",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Tehran + major cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Cash (rial) + local wallets",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No Western apps due to sanctions. Snapp hit a record 5,896,797 daily trips in Feb 2025 per bne IntelliNews. Requires Iranian SIM to register.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Iraq",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Careem",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Baly",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Baghdad, Erbil, Basra",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Security considerations.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Israel",
+      "region": "Asia",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "Gett",
+          "status": "nationwide",
+          "pros": "Israeli-founded; hails licensed taxis"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "Uber",
+          "status": "taxi_only"
+        }
+      ],
+      "geographic_limitations": "Tel Aviv, Jerusalem, Haifa",
+      "airport_pickup": "Ben Gurion airport taxi",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Japan",
+      "region": "Asia",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "GO",
+          "status": "nationwide",
+          "pros": "Local leader, hails licensed taxis"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Uber",
+          "status": "taxi_only"
+        },
+        {
+          "name": "S.Ride",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Tokyo, Osaka, Kyoto, Sapporo, etc.",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Card + cash + IC card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Private ridesharing liberalization is ongoing but still limited/regional as of 2025-2026; Uber functions mainly as a taxi-dispatch app.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Jordan",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Jeeny",
+          "status": "nationwide",
+          "pros": "Local app"
+        },
+        {
+          "name": "Careem",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "Taxi Jo",
+          "status": "city_only"
+        },
+        {
+          "name": "Petra Ride",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Amman, Aqaba, Petra",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Kazakhstan",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Yandex Go",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "nationwide",
+          "pros": "Founded here"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Almaty, Astana",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "inDrive's country of origin.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Kuwait",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Yandex Go",
+          "status": "nationwide"
+        },
+        {
+          "name": "Careem",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Kuwait City",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Kyrgyzstan",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Yandex Go",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Navi Taxi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Bishkek, Osh",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Laos",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "LOCA",
+          "status": "city_only",
+          "pros": "Lao EV-focused local app"
+        },
+        {
+          "name": "Kokkok",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Vientiane, Luang Prabang",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Lebanon",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Allo Taxi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Beirut",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash (USD)",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Economic crisis affects pricing/reliability.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Malaysia",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Grab",
+          "status": "nationwide",
+          "pros": "Dominant"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        },
+        {
+          "name": "AirAsia Ride",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Kuala Lumpur + major cities",
+      "airport_pickup": "Airport pickup zones",
+      "local_taxi_cash_requirement": "Card + cash + e-wallet",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Maldives",
+      "region": "Asia",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Nala Taxi",
+          "status": "city_only",
+          "pros": "Local, Malé/Hulhumalé only"
+        }
+      ],
+      "geographic_limitations": "Greater Malé area only",
+      "airport_pickup": "Velana airport taxi; resort islands use boat transfers",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Island geography sharply limits scope — most resorts have no ride-hailing at all.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Mongolia",
+      "region": "Asia",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "UBCab",
+          "status": "city_only",
+          "pros": "Local leader, operates in 16 cities"
+        },
+        {
+          "name": "Taxon",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Ulaanbaatar + 16 cities",
+      "airport_pickup": "Chinggis Khaan airport — meter scams reported, use official rank",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No Uber/Grab presence.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Myanmar",
+      "region": "Asia",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Grab",
+          "status": "city_only",
+          "pros": "Leader"
+        },
+        {
+          "name": "Oway",
+          "status": "city_only"
+        },
+        {
+          "name": "Hello Cabs",
+          "status": "city_only"
+        },
+        {
+          "name": "FastGo",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Yangon, Mandalay",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Post-coup political instability affects operations.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Nepal",
+      "region": "Asia",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Pathao",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only",
+          "pros": "Launched Kathmandu 2024, 400+ drivers, commission-free for 6 months"
+        },
+        {
+          "name": "Tootle",
+          "status": "city_only"
+        },
+        {
+          "name": "Sahara",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Kathmandu Valley",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + wallet",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "App-based ride-hailing operates in a legal gray zone.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "North Korea",
+      "region": "Asia",
+      "uber_status": "banned",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "State-controlled transport only",
+      "local_taxi_cash_requirement": "Cash/none",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No ride-hailing app of any kind; state-controlled transport system.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Oman",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Yango",
+          "status": "nationwide"
+        },
+        {
+          "name": "Otaxi",
+          "status": "city_only"
+        },
+        {
+          "name": "Careem",
+          "status": "nationwide"
+        }
+      ],
+      "geographic_limitations": "Muscat, Salalah",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Pakistan",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "nationwide"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "Careem",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bykea",
+          "status": "nationwide",
+          "pros": "Moto/delivery local app"
+        }
+      ],
+      "geographic_limitations": "Karachi, Lahore, Islamabad",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber's regional operations merged into Careem.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Philippines",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Grab",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "Joyride",
+          "status": "city_only",
+          "pros": "Moto-taxi"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        },
+        {
+          "name": "Angkas",
+          "status": "city_only",
+          "pros": "Moto-taxi"
+        }
+      ],
+      "geographic_limitations": "Manila, Cebu, Davao",
+      "airport_pickup": "MNL airport pickup zones",
+      "local_taxi_cash_requirement": "Cash + card + e-wallet",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Qatar",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Careem",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Doha",
+      "airport_pickup": "Hamad airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Karwa state-run taxi remains an alternative.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Saudi Arabia",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Careem",
+          "status": "nationwide"
+        },
+        {
+          "name": "Jeeny",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Riyadh, Jeddah, Dammam, Mecca",
+      "airport_pickup": "Airport pickup zones",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Singapore",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Grab",
+          "status": "nationwide",
+          "pros": "Dominant infrastructure-level app"
+        },
+        {
+          "name": "Tada",
+          "status": "city_only",
+          "pros": "Zero-commission"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Gojek",
+          "status": "city_only"
+        },
+        {
+          "name": "ComfortDelGro",
+          "status": "city_only",
+          "pros": "Taxi app"
+        }
+      ],
+      "geographic_limitations": "City-state wide",
+      "airport_pickup": "Changi airport pickup zones",
+      "local_taxi_cash_requirement": "Card + cash + e-wallet",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "South Korea",
+      "region": "Asia",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "Kakao T",
+          "status": "nationwide",
+          "pros": "Dominant"
+        },
+        {
+          "name": "Uber",
+          "status": "taxi_only"
+        },
+        {
+          "name": "Tada",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Seoul + major cities",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Card + cash + T-money",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Private ridesharing has historically been legally restricted (see the Tada controversy); apps largely dispatch licensed taxis.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Sri Lanka",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "PickMe",
+          "status": "nationwide",
+          "pros": "Local champion, publicly listed company"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Colombo + major cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "PickMe also supports tuk-tuk hailing.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "State of Palestine",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Traditional taxis and some local dispatch services; conflict-affected.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Syria",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "War-disrupted; no formal ride-hailing infrastructure.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Taiwan",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide",
+          "pros": "Leader, works via licensed taxi partners"
+        },
+        {
+          "name": "55688 (Taiwan Taxi)",
+          "status": "nationwide",
+          "pros": "Local"
+        },
+        {
+          "name": "LINE GO",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Taipei + major cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash + EasyCard",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Tajikistan",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Dushanbe",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Thailand",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Grab",
+          "status": "nationwide",
+          "pros": "Dominant"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Tada",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Line Man",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Bangkok + tourist cities",
+      "airport_pickup": "Airport pickup zones",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Timor-Leste",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Traditional taxis/microlets only; no verified ride-hailing app.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Türkiye",
+      "region": "Asia",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "Yandex Go",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "Uber",
+          "status": "taxi_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Careem",
+          "status": "city_only"
+        },
+        {
+          "name": "BiTaksi",
+          "status": "nationwide",
+          "pros": "Iconic local app"
+        }
+      ],
+      "geographic_limitations": "Istanbul, Ankara, Izmir",
+      "airport_pickup": "IST airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "UberX (private-driver) was blocked; Uber now dispatches licensed taxis only.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Turkmenistan",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Isolated regime; traditional taxis only.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "United Arab Emirates",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Careem",
+          "status": "nationwide",
+          "pros": "Leader, Uber-owned, HQ'd here"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Dubai, Abu Dhabi, Sharjah",
+      "airport_pickup": "Airport designated pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "RTA taxis integrated into apps.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Uzbekistan",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Yandex Go",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        },
+        {
+          "name": "MyTaxi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Tashkent, Samarkand, Bukhara",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "Registering a card typically requires a local SIM.",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Vietnam",
+      "region": "Asia",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Grab",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "Be",
+          "status": "city_only"
+        },
+        {
+          "name": "Xanh SM",
+          "status": "nationwide",
+          "pros": "EV-focused local app"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Ho Chi Minh City, Hanoi, Da Nang",
+      "airport_pickup": "Airport pickup zones",
+      "local_taxi_cash_requirement": "Cash + card + e-wallet",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Gojek exited the Vietnam market in September 2024.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Yemen",
+      "region": "Asia",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Smart Rahal",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Sana'a, Aden",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Active conflict disrupts service.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Albania",
+      "region": "Europe",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Clust",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Tirana",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Andorra",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "city_only",
+          "pros": "Pre-book only, not roaming"
+        },
+        {
+          "name": "CityXerpa",
+          "status": "city_only"
+        },
+        {
+          "name": "Cabify",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Andorra la Vella",
+      "airport_pickup": "Pre-book required",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Sources conflict on the extent of Uber's presence; very few drivers.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Austria",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "FREENOW",
+          "status": "nationwide"
+        }
+      ],
+      "geographic_limitations": "Vienna + major cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Belarus",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Yandex Go",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only",
+          "pros": "Via local licensed entity"
+        },
+        {
+          "name": "Taxi 135",
+          "status": "city_only"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Minsk + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Belgium",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Heetch",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Brussels, Antwerp",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Brussels taxi-driver protests against ride-hail apps have recurred.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Bosnia and Herzegovina",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Moj Taxi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Sarajevo",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Bulgaria",
+      "region": "Europe",
+      "uber_status": "banned",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        },
+        {
+          "name": "Yellow Taxi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Sofia + cities",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber exited after a 2015 ban and has not returned.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Croatia",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        }
+      ],
+      "geographic_limitations": "Zagreb, Split, Dubrovnik",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Cyprus",
+      "region": "Europe",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Nicosia, Limassol, Larnaca, Paphos",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber is not present.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Czechia",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Liftago",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Prague, Brno",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Denmark",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "city_only",
+          "pros": "Left 2017, returned"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Copenhagen",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Strict taxi licensing law shapes market.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Estonia",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "Bolt's home country"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        }
+      ],
+      "geographic_limitations": "Tallinn, Tartu",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Finland",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Helsinki + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "France",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Heetch",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Yassir",
+          "status": "city_only"
+        },
+        {
+          "name": "FREENOW",
+          "status": "city_only"
+        },
+        {
+          "name": "Marcel",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Paris + major cities",
+      "airport_pickup": "CDG/Orly designated pickup zones",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "VTC (private-hire) license regime regulates all apps.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Germany",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide",
+          "pros": "Dispatches licensed operators"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "FREENOW",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Berlin, Munich, Hamburg, Cologne, Frankfurt",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No gig-economy private drivers by law; all rides go through licensed rental/taxi operators.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Greece",
+      "region": "Europe",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "taxi_only",
+          "pros": "Dispatches licensed taxis"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "FREENOW",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Athens, Thessaloniki",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Hungary",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "Market leader"
+        }
+      ],
+      "geographic_limitations": "Budapest + cities",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber was banned/exited in 2016 due to a taxi-industry-backed law; returned in 2024 via a licensed-taxi partnership (Főtaxi).",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Iceland",
+      "region": "Europe",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Hopp",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Reykjavík",
+      "airport_pickup": "Airport taxi/shuttle",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Ride-hailing is very limited; Uber and Bolt are not established. Taxis dominate.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Ireland",
+      "region": "Europe",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "FREENOW",
+          "status": "nationwide",
+          "pros": "Leader, taxis"
+        },
+        {
+          "name": "Uber",
+          "status": "taxi_only"
+        }
+      ],
+      "geographic_limitations": "Dublin, Cork",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Italy",
+      "region": "Europe",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "taxi_only",
+          "pros": "Limited to premium/taxi tiers, absent in several major cities"
+        },
+        {
+          "name": "FREENOW",
+          "status": "nationwide"
+        },
+        {
+          "name": "IT Taxi",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Rome, Milan, Turin (limited); absent in Naples, Florence, Palermo, etc.",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "UberPop (private drivers) was banned in 2015; strict taxi protections remain the strictest in Europe.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Kosovo",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Local taxi apps (post-2024)",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Pristina",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Latvia",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "Yandex Go",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Riga + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber is absent.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Liechtenstein",
+      "region": "Europe",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Taxi/phone booking only",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No ride-hailing app; order taxis by phone.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Lithuania",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "More reliable/preferred"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        }
+      ],
+      "geographic_limitations": "Vilnius, Kaunas",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Luxembourg",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "Local taxi apps",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Luxembourg City",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Malta",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "Largest fleet"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide",
+          "pros": "Since 2022"
+        },
+        {
+          "name": "eCabs",
+          "status": "nationwide",
+          "pros": "Maltese local champion"
+        }
+      ],
+      "geographic_limitations": "Malta, Gozo, Comino",
+      "airport_pickup": "Malta airport pickup (limited driver supply)",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Moldova",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Yandex Go",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "iTaxi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Chișinău",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber is absent.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Monaco",
+      "region": "Europe",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "TAXI MONACO",
+          "status": "nationwide",
+          "pros": "Official app, launched Apr 2025"
+        },
+        {
+          "name": "SIXT",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Principality-wide (~95 licensed cabs)",
+      "airport_pickup": "Uber may drop off from France but cannot pick up inside Monaco",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber, Bolt, and FREENOW are banned from operating within Monaco.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Montenegro",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Local taxi apps",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Podgorica",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Netherlands",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "FREENOW",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Amsterdam + cities",
+      "airport_pickup": "Schiphol airport pickup",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "North Macedonia",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Local taxi apps",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Skopje",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Norway",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Oslo, Bergen",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Poland",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "FREENOW",
+          "status": "city_only"
+        },
+        {
+          "name": "iTaxi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Warsaw + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Portugal",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "FREENOW",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Lisbon, Porto",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Romania",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        }
+      ],
+      "geographic_limitations": "Bucharest + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Russia",
+      "region": "Europe",
+      "uber_status": "banned",
+      "apps": [
+        {
+          "name": "Yandex Go",
+          "status": "nationwide",
+          "pros": "Dominant super-app"
+        },
+        {
+          "name": "Maxim",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Moscow + cities",
+      "airport_pickup": "Airport designated zones",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber merged its Russia operations into Yandex; sanctions/isolation shape the market.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "San Marino",
+      "region": "Europe",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Country too small for app-based ride-hailing; taxis are expensive and limited.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Serbia",
+      "region": "Europe",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "CarGo",
+          "status": "gray_area",
+          "pros": "Local app, status uncertain"
+        },
+        {
+          "name": "Yandex Go",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Belgrade",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Uber is banned/restricted by taxi licensing rules; CarGo's exact operating status is inconsistently reported.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Slovakia",
+      "region": "Europe",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only",
+          "pros": "Bratislava only"
+        }
+      ],
+      "geographic_limitations": "Bratislava",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Slovenia",
+      "region": "Europe",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Hopin",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Ljubljana",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber is not present.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Spain",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Cabify",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "FREENOW",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Madrid, Barcelona + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "VTC (private-hire) vs taxi disputes are ongoing, notably in Barcelona.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Sweden",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "FREENOW",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Stockholm + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Switzerland",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        }
+      ],
+      "geographic_limitations": "Zurich, Geneva + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber has faced employment-classification disputes in Switzerland.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Ukraine",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "Uklon",
+          "status": "nationwide",
+          "pros": "Ukrainian local app"
+        },
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Kyiv + cities",
+      "airport_pickup": "Airport pickup where operating",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "War-related disruptions to service in affected regions.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "United Kingdom",
+      "region": "Europe",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Bolt",
+          "status": "nationwide"
+        },
+        {
+          "name": "FREENOW",
+          "status": "nationwide"
+        },
+        {
+          "name": "Ola",
+          "status": "city_only"
+        },
+        {
+          "name": "Addison Lee",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "London + cities",
+      "airport_pickup": "Airport pickup zones",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Vatican City",
+      "region": "Europe",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Rome taxis serve the enclave",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No taxis based within Vatican City itself; served by Rome's taxi/ride-hail network.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "United States",
+      "region": "North America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Lyft",
+          "status": "nationwide"
+        },
+        {
+          "name": "Waymo",
+          "status": "city_only",
+          "pros": "Robotaxi, select cities"
+        }
+      ],
+      "geographic_limitations": "Nationwide",
+      "airport_pickup": "Airport designated pickup zones",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Canada",
+      "region": "North America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Lyft",
+          "status": "nationwide"
+        }
+      ],
+      "geographic_limitations": "Major cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Some provinces/municipalities regulate ride-hail separately from taxis.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Mexico",
+      "region": "North America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "DiDi",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Cabify",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Mexico City + cities",
+      "airport_pickup": "Cancún/Los Cabos have documented taxi-mafia airport conflicts",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Resort-area taxi cartels have targeted ride-hail drivers/riders at some airports.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Guatemala",
+      "region": "North America",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "city_only",
+          "pros": "Considered safest option"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Guatemala City, Antigua, Xela, Panajachel",
+      "airport_pickup": "La Aurora airport — use app/official pickup",
+      "local_taxi_cash_requirement": "Cash accepted",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "Typical short-trip fares run roughly Q20-60.",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Belize",
+      "region": "North America",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "MiDriva",
+          "status": "city_only",
+          "pros": "Nascent local app, limited scale"
+        }
+      ],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Fixed-fare airport taxis",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Uber left Belize in 2017; green-plate taxis dominate. Booking via hotel is recommended.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "El Salvador",
+      "region": "North America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "San Salvador + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Government initially resisted Uber's 2017 entry but it has operated since.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Honduras",
+      "region": "North America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Tegucigalpa, San Pedro Sula",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber has never formally launched in Honduras. Booking through hotels is advisable.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Nicaragua",
+      "region": "North America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Managua",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber has been effectively blocked since 2015 due to opposition from the taxi sector.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Costa Rica",
+      "region": "North America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "gray_area",
+          "pros": "Operates despite unresolved legal status"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "San José + cities",
+      "airport_pickup": "SJO airport has a taxi monopoly; app pickup discouraged/restricted",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Uber's legal status in Costa Rica remains formally unresolved.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Panama",
+      "region": "North America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "DiDi",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Panama City",
+      "airport_pickup": "Tocumen airport pickup zones",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Cuba",
+      "region": "North America",
+      "uber_status": "banned",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "State/informal airport taxi",
+      "local_taxi_cash_requirement": "Cash (CUP/USD)",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No Western ride-hail apps operate; state-run taxis and private (almendrones) taxis fill the gap.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Dominican Republic",
+      "region": "North America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Nekso",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Santo Domingo, Santiago, Punta Cana",
+      "airport_pickup": "Resort airports (e.g. PUJ) restrict app pickup; taxi unions push back",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Airport taxi unions actively resist ride-hail pickup at resort airports.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Haiti",
+      "region": "North America",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Security collapse has disrupted formal transport; informal taptaps and taxis fill the gap.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Jamaica",
+      "region": "North America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "DoRide",
+          "status": "city_only",
+          "pros": "JUTA-affiliated app"
+        }
+      ],
+      "geographic_limitations": "Kingston, Montego Bay",
+      "airport_pickup": "JUTA holds an effective taxi monopoly at airports",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "A year-long rideshare ban had limited real-world effect per the Fair Trading Commission; JUTA taxi union controls formal airport access.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Bahamas",
+      "region": "North America",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "Bahamas Ride / MyRide",
+          "status": "nationwide",
+          "pros": "Hails licensed taxis, fixed zone fares"
+        },
+        {
+          "name": "HOP",
+          "status": "city_only"
+        },
+        {
+          "name": "Kroozzy",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Nassau, Freeport",
+      "airport_pickup": "Lynden Pindling airport taxis (~US$36 to downtown, fixed)",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No Uber or Lyft. Strong taxi union has historically blocked private rideshare; Uber reportedly in talks as of Feb 2026 but not launched.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Barbados",
+      "region": "North America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide",
+          "pros": "Uber Taxi model, launched Oct 30 2025 with 400+ licensed drivers"
+        },
+        {
+          "name": "PickUP Barbados",
+          "status": "city_only"
+        },
+        {
+          "name": "Bimride",
+          "status": "city_only"
+        },
+        {
+          "name": "Zail",
+          "status": "city_only",
+          "pros": "Taxi co-op app launched to counter Uber"
+        }
+      ],
+      "geographic_limitations": "Island-wide",
+      "airport_pickup": "Airport taxi + app pickup both available",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "First Eastern Caribbean nation with an official Uber launch; ~2,500 licensed taxis operate under government-set fares.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Trinidad and Tobago",
+      "region": "North America",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Ridelink",
+          "status": "city_only",
+          "pros": "Local market leader"
+        },
+        {
+          "name": "TTRS",
+          "status": "city_only"
+        },
+        {
+          "name": "Drop",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Port of Spain, San Fernando",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Reports conflict on whether Uber/Bolt have meaningful presence; local apps appear to lead.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Saint Lucia",
+      "region": "North America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide",
+          "pros": "Uber Taxi model, launched Jan 2026"
+        },
+        {
+          "name": "Allez",
+          "status": "city_only"
+        },
+        {
+          "name": "RIDE Caribbean",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Island-wide",
+      "airport_pickup": "Hewanorra/George F. L. Charles airport",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Newly launched as of Jan 2026; Uber rides are fulfilled by licensed taxi drivers.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Grenada",
+      "region": "North America",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Haylup",
+          "status": "city_only",
+          "pros": "Local app"
+        },
+        {
+          "name": "Eberlink",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Island-wide",
+      "airport_pickup": "Maurice Bishop airport (Haylup pickup available)",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No Uber/Bolt presence; note Uber.com listings for 'Grenada' typically refer to a US town, not the country.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Antigua and Barbuda",
+      "region": "North America",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Swyft Taxi",
+          "status": "nationwide",
+          "pros": "First local rideshare app, launched Sept 2025"
+        }
+      ],
+      "geographic_limitations": "Island-wide",
+      "airport_pickup": "V.C. Bird airport fixed fares (~US$31)",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "New app launch has generated friction with the existing taxi union.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Dominica",
+      "region": "North America",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "RideDominica",
+          "status": "city_only"
+        },
+        {
+          "name": "Drop",
+          "status": "city_only"
+        },
+        {
+          "name": "Allez",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Island-wide",
+      "airport_pickup": "Douglas-Charles airport (Cabinet-set rates)",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "'H'-plate registered taxis remain the primary transport mode.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Saint Kitts and Nevis",
+      "region": "North America",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "SKNCabs",
+          "status": "city_only"
+        },
+        {
+          "name": "DROP:SKN",
+          "status": "city_only"
+        },
+        {
+          "name": "CabKn",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Both islands",
+      "airport_pickup": "Bradshaw/Amory airport transfers",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Saint Vincent and the Grenadines",
+      "region": "North America",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Allez",
+          "status": "city_only",
+          "pros": "Planned launch ~Apr 2026, unverified"
+        },
+        {
+          "name": "BeepCab",
+          "status": "city_only"
+        },
+        {
+          "name": "BeamX",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Saint Vincent",
+      "airport_pickup": "Argyle airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "No Uber/Bolt; taxis remain primary. Allez launch date should be re-verified.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Guyana",
+      "region": "South America",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "592 Rides",
+          "status": "city_only",
+          "pros": "Launched 2025"
+        }
+      ],
+      "geographic_limitations": "Georgetown",
+      "airport_pickup": "Cheddi Jagan airport transfers",
+      "local_taxi_cash_requirement": "Cash + card/mobile",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "'GuyWay' has been advertised for a 2026 launch but is not confirmed live.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Suriname",
+      "region": "South America",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "Ride (ride.sr)",
+          "status": "city_only"
+        },
+        {
+          "name": "Caribe Taxi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Paramaribo",
+      "airport_pickup": "Johan Pengel airport taxi (~US$25-40)",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Uber, Grab, and Bolt are all absent.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Argentina",
+      "region": "South America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "gray_area",
+          "pros": "Legally contested, especially in Buenos Aires, but operates widely"
+        },
+        {
+          "name": "Cabify",
+          "status": "nationwide"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Buenos Aires, Córdoba, Mendoza, Rosario",
+      "airport_pickup": "EZE airport has documented taxi-driver conflicts with ride-hail",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Buenos Aires' top court upheld Uber's legality in a 2020 ruling, but friction with taxi unions continues.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Bolivia",
+      "region": "South America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "gray_area"
+        },
+        {
+          "name": "Yango",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "La Paz, Santa Cruz",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Operates in a largely unregulated gray zone.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Brazil",
+      "region": "South America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "99",
+          "status": "nationwide",
+          "pros": "DiDi-owned, local leader"
+        },
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Nationwide",
+      "airport_pickup": "Airport pickup zones",
+      "local_taxi_cash_requirement": "Cash + card + Pix",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "99 reports ~50M+ active users and 3,300+ served cities.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Chile",
+      "region": "South America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "gray_area"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Cabify",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Santiago + cities",
+      "airport_pickup": "SCL airport pickup",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Widely used despite ongoing regulatory friction; regulation is evolving.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Colombia",
+      "region": "South America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "gray_area",
+          "pros": "Operates via a car-rental legal loophole (UberX/UberYa)"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Cabify",
+          "status": "city_only"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Bogotá, Medellín, Cali",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Colombia's Supreme Court (2023) held that Uber's use of technology alone isn't unfair competition, but a clear regulatory framework remains pending — a persistent legal gray zone.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Ecuador",
+      "region": "South America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "gray_area"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Cabify",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Quito, Guayaquil",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Operates unregulated.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Paraguay",
+      "region": "South America",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "MUV",
+          "status": "city_only",
+          "pros": "Paraguayan local app"
+        }
+      ],
+      "geographic_limitations": "Asunción",
+      "airport_pickup": "Airport taxi",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Peru",
+      "region": "South America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "DiDi",
+          "status": "nationwide"
+        },
+        {
+          "name": "inDrive",
+          "status": "nationwide"
+        },
+        {
+          "name": "Cabify",
+          "status": "city_only"
+        },
+        {
+          "name": "Beat",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Lima, Cusco, Arequipa",
+      "airport_pickup": "LIM airport has documented app-pickup restrictions",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Uruguay",
+      "region": "South America",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide"
+        },
+        {
+          "name": "Cabify",
+          "status": "nationwide"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Montevideo",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card + cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Regulated specifically in Montevideo.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Venezuela",
+      "region": "South America",
+      "uber_status": "gray_area",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "gray_area",
+          "pros": "Disputed presence; functions despite economic crisis"
+        },
+        {
+          "name": "inDrive",
+          "status": "city_only"
+        },
+        {
+          "name": "Yummy",
+          "status": "city_only"
+        },
+        {
+          "name": "RideryApp",
+          "status": "city_only"
+        },
+        {
+          "name": "Nekso",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Caracas + cities",
+      "airport_pickup": "Informal airport pickup",
+      "local_taxi_cash_requirement": "Cash (USD) + some card",
+      "volatile": true,
+      "regulatory_alert": true,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No formal fare regulation; drivers and riders negotiate directly amid hyperinflation.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Australia",
+      "region": "Oceania",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "DiDi",
+          "status": "nationwide"
+        },
+        {
+          "name": "Ola",
+          "status": "city_only"
+        },
+        {
+          "name": "Bolt",
+          "status": "city_only"
+        },
+        {
+          "name": "Shebah",
+          "status": "city_only",
+          "pros": "Women/non-binary-only driver network"
+        }
+      ],
+      "geographic_limitations": "Nationwide",
+      "airport_pickup": "Airport designated pickup",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "New Zealand",
+      "region": "Oceania",
+      "uber_status": "nationwide",
+      "apps": [
+        {
+          "name": "Uber",
+          "status": "nationwide",
+          "pros": "Leader"
+        },
+        {
+          "name": "Ola",
+          "status": "city_only"
+        },
+        {
+          "name": "DiDi",
+          "status": "city_only"
+        },
+        {
+          "name": "Zoomy",
+          "status": "city_only",
+          "pros": "Local app"
+        }
+      ],
+      "geographic_limitations": "Auckland + cities",
+      "airport_pickup": "Airport pickup",
+      "local_taxi_cash_requirement": "Card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Fiji",
+      "region": "Oceania",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "Fiji Cabs",
+          "status": "nationwide",
+          "pros": "E-hails licensed taxis"
+        },
+        {
+          "name": "Mobility Fiji",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Suva, Nadi, Lautoka",
+      "airport_pickup": "Nadi airport taxi rank",
+      "local_taxi_cash_requirement": "Cash + card",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No Uber presence.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Papua New Guinea",
+      "region": "Oceania",
+      "uber_status": "taxi_only",
+      "apps": [
+        {
+          "name": "Taxi App PNG",
+          "status": "city_only"
+        },
+        {
+          "name": "MyRide PNG",
+          "status": "city_only"
+        }
+      ],
+      "geographic_limitations": "Port Moresby",
+      "airport_pickup": "Jacksons airport — premium operators (Odesh, Star Trip, Pikup) recommended; touts common",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": true,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No Uber; safety/security considerations at the airport.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Samoa",
+      "region": "Oceania",
+      "uber_status": "city_only",
+      "apps": [
+        {
+          "name": "Maua Taxi",
+          "status": "city_only",
+          "pros": "Local app, launched for CHOGM 2024"
+        }
+      ],
+      "geographic_limitations": "Apia (Upolu)",
+      "airport_pickup": "Faleolo airport taxi",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No Uber/Grab/Bolt presence.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Tonga",
+      "region": "Oceania",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Fuaʻamotu airport taxi (~TOP 50-70)",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "Traditional taxis only; no ride-hailing app.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Vanuatu",
+      "region": "Oceania",
+      "uber_status": "absent",
+      "apps": [
+        {
+          "name": "VanuWay/ReGor",
+          "status": "city_only",
+          "pros": "Nascent local apps, unverified scale"
+        }
+      ],
+      "geographic_limitations": "Port Vila",
+      "airport_pickup": "Bauerfield airport fixed-fare taxis (~2500-4000 VT)",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Grab/Uber absent; local app scale is unverified.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Solomon Islands",
+      "region": "Oceania",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Henderson airport taxi rank",
+      "local_taxi_cash_requirement": "Cash",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "high",
+      "traveler_notes": "",
+      "other_notes": "No app-based ride-hailing; phone dispatch only (PMVs and taxis).",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Kiribati",
+      "region": "Oceania",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Bonriki airport taxi",
+      "local_taxi_cash_requirement": "Cash (AUD)",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Traditional taxis/minibuses only. A widely repeated 'DiDi in Kiribati' claim from one AI-generated travel site is unreliable and not treated as fact here.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Micronesia (Federated States of)",
+      "region": "Oceania",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "State airport taxis",
+      "local_taxi_cash_requirement": "Cash (USD)",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Independent-operator and shared taxis only.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Marshall Islands",
+      "region": "Oceania",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Informal airport taxi",
+      "local_taxi_cash_requirement": "Cash (USD)",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Informal shared taxis in Majuro, roughly $0.75-2 per ride.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Palau",
+      "region": "Oceania",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Roman Tmetuchl airport taxi",
+      "local_taxi_cash_requirement": "Cash (USD)",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Taxis in Koror operate on negotiated fares; no Grab or similar app. Note: Uber.com listings for 'Palau' typically refer to a town in Sardinia, Italy, not the country.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Nauru",
+      "region": "Oceania",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Airport pre-arranged transport (~AUD 10-30)",
+      "local_taxi_cash_requirement": "Cash (AUD)",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Personal cars serve as informal taxis; no Uber/Lyft.",
+      "last_verified": "2026-07-21"
+    },
+    {
+      "country": "Tuvalu",
+      "region": "Oceania",
+      "uber_status": "absent",
+      "apps": [],
+      "geographic_limitations": "N/A",
+      "airport_pickup": "Funafuti airport informal pickup (~AUD 5-10)",
+      "local_taxi_cash_requirement": "Cash (AUD)",
+      "volatile": false,
+      "regulatory_alert": false,
+      "confidence": "low",
+      "traveler_notes": "",
+      "other_notes": "Informal pickup-truck taxis in Funafuti.",
+      "last_verified": "2026-07-21"
+    }
+  ]
+}
