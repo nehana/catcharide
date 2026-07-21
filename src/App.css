@@ -4,6 +4,7 @@
   --border: #2a2e3d;
   --accent: #d4af37;
   --accent-bg: rgba(212, 175, 55, 0.12);
+  --accent-border: rgba(212, 175, 55, 0.4);
   --text-muted: #9aa0ac;
   --green: #4ade80;
   --amber: #fbbf24;
@@ -290,4 +291,112 @@ h1 {
   text-align: center;
   font-size: 12px;
   color: #5c6070;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 40px 16px 32px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .subhead {
+    font-size: 15px;
+  }
+  .search-bar {
+    padding: 12px 14px;
+  }
+  .meta-panel {
+    gap: 6px;
+  }
+  .meta-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .meta-label {
+    width: auto;
+  }
+}
+
+/* Recommended panel */
+.recommended-panel {
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.recommended-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.recommended-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.recommended-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #eae7e0;
+}
+
+.recommended-why {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cfd2d9;
+  margin: 0 0 10px;
+}
+
+.recommended-line {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 4px;
+}
+
+.recommended-line strong {
+  color: #cfd2d9;
+}
+
+.recommended-caveat {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 10px 0 0;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+
+.ride-card-highlighted {
+  border-color: var(--accent);
+}
+
+.ride-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-pill {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--accent-bg);
 }

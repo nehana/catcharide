@@ -5,6 +5,19 @@ import './App.css';
 
 const { countries } = rideshareData;
 
+// Countries with hand-reviewed recommendations (per the enrichment pass).
+// Everything else uses a mechanical "first in list" fallback — flagged as lower-confidence.
+const REVIEWED_COUNTRIES = new Set([
+  'Morocco', 'Colombia', 'Costa Rica', 'Argentina', 'Venezuela', 'Hong Kong',
+  'Türkiye', 'Cameroon', 'Tunisia', 'Togo', 'Nigeria', 'Bahamas', 'Jamaica',
+  'Trinidad and Tobago', 'Serbia', 'Ethiopia', 'Senegal', 'Sudan', 'Yemen',
+  'Honduras', 'Nicaragua', 'Nepal', 'Guyana', 'Vanuatu',
+]);
+
+const STATUS_RANK = {
+  nationwide: 0, city_only: 1, taxi_only: 2, gray_area: 3, banned: 4, absent: 5,
+};
+
 function App() {
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState(null);
@@ -16,6 +29,13 @@ function App() {
       .slice(0, 6);
   }, [query, selected]);
 
+  const sortedApps = useMemo(() => {
+    if (!selected) return [];
+    return [...selected.apps].sort(
+      (a, b) => STATUS_RANK[a.status] - STATUS_RANK[b.status]
+    );
+  }, [selected]);
+
   const handleSelect = (country) => {
     setSelected(country);
     setQuery(country.country);
@@ -25,6 +45,9 @@ function App() {
     setQuery(e.target.value);
     if (selected) setSelected(null);
   };
+
+  const isReviewed = selected && REVIEWED_COUNTRIES.has(selected.country);
+  const rec = selected?.recommended;
 
   return (
     <div className="page">
@@ -89,18 +112,52 @@ function App() {
               )}
             </div>
 
-            <div className="card-grid">
-              {selected.apps.length > 0 ? (
-                selected.apps.map((app) => (
-                  <RideshareCard key={app.name} app={app} />
-                ))
-              ) : (
-                <p className="no-apps">
-                  No rideshare apps reported here — traditional taxis are the
-                  main option.
-                </p>
-              )}
-            </div>
+            {rec && (
+              <div className="recommended-panel">
+                <div className="recommended-header">
+                  <span className="recommended-eyebrow">
+                    ★ Recommended {!isReviewed && '· auto-suggested'}
+                  </span>
+                  {rec.app ? (
+                    <h3>{rec.app}</h3>
+                  ) : (
+                    <h3>No app — use a local taxi</h3>
+                  )}
+                </div>
+                <p className="recommended-why">{rec.why}</p>
+                {rec.alternative && (
+                  <p className="recommended-line">
+                    <strong>Backup:</strong> {rec.alternative}
+                  </p>
+                )}
+                {rec.budget_note && (
+                  <p className="recommended-line">
+                    <strong>Budget tip:</strong> {rec.budget_note}
+                  </p>
+                )}
+                {!isReviewed && (
+                  <p className="recommended-caveat">
+                    This pick hasn't been manually reviewed yet — treat it as a
+                    starting point, not the final word.
+                  </p>
+                )}
+              </div>
+            )}
+
+            {sortedApps.length > 0 && (
+              <>
+                <p className="section-label">All options</p>
+                <div className="card-grid">
+                  {sortedApps.map((app) => (
+                    <RideshareCard
+                      key={app.name}
+                      app={app}
+                      isRecommended={rec?.app === app.name}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
 
             <div className="meta-panel">
               {selected.geographic_limitations &&

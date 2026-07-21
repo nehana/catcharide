@@ -7,14 +7,24 @@ const STATUS_LABELS = {
   absent: { label: 'Not Available', className: 'status-absent' },
 };
 
-function RideshareCard({ app }) {
+const PRICE_LABELS = {
+  cheap: '$',
+  mid: '$$',
+  premium: '$$$',
+};
+
+function RideshareCard({ app, isRecommended }) {
   const status = STATUS_LABELS[app.status] ?? STATUS_LABELS.absent;
+  const priceLabel = PRICE_LABELS[app.price_tier];
 
   return (
-    <div className="ride-card">
+    <div className={`ride-card ${isRecommended ? 'ride-card-highlighted' : ''}`}>
       <div className="ride-card-header">
         <h3>{app.name}</h3>
-        <span className={`status-pill ${status.className}`}>{status.label}</span>
+        <div className="ride-card-badges">
+          {priceLabel && <span className="price-pill">{priceLabel}</span>}
+          <span className={`status-pill ${status.className}`}>{status.label}</span>
+        </div>
       </div>
 
       {app.pros && (
