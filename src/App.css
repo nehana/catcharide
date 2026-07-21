@@ -112,6 +112,10 @@ h1 {
   padding: 6px;
   text-align: left;
   z-index: 10;
+  /* Roughly six rows, then scroll — every match stays reachable. */
+  max-height: 312px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .suggestions li {
@@ -124,7 +128,8 @@ h1 {
   font-size: 15px;
 }
 
-.suggestions li:hover {
+.suggestions li:hover,
+.suggestions li.is-active {
   background: var(--accent-bg);
   color: var(--accent);
 }
