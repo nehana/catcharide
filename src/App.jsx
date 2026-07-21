@@ -1,29 +1,60 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import rideshareData from './data/rideshareData.json';
 import RideshareCard from './components/RideshareCard';
+import { createCountrySearch } from './lib/search';
 import './App.css';
 
 const { countries } = rideshareData;
+const searchCountries = createCountrySearch(countries);
 
 function App() {
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const listRef = useRef(null);
 
   const suggestions = useMemo(() => {
-    if (!query.trim() || selected) return [];
-    return countries
-      .filter((c) => c.country.toLowerCase().includes(query.toLowerCase()))
-      .slice(0, 6);
+    if (selected) return [];
+    return searchCountries(query);
   }, [query, selected]);
+
+  // The list scrolls, so arrowing past the visible rows has to drag the
+  // viewport along or the highlight disappears off the bottom.
+  useEffect(() => {
+    listRef.current?.querySelector('.is-active')?.scrollIntoView({ block: 'nearest' });
+  }, [activeIndex, suggestions]);
 
   const handleSelect = (country) => {
     setSelected(country);
     setQuery(country.country);
+    setActiveIndex(0);
   };
 
   const handleChange = (e) => {
     setQuery(e.target.value);
+    setActiveIndex(0);
     if (selected) setSelected(null);
+  };
+
+  // Enter takes the highlighted match, so searching never requires the mouse.
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      setSelected(null);
+      setQuery('');
+      return;
+    }
+    if (!suggestions.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setActiveIndex((i) => (i + 1) % suggestions.length);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActiveIndex((i) => (i - 1 + suggestions.length) % suggestions.length);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSelect(suggestions[activeIndex] ?? suggestions[0]);
+    }
   };
 
   return (
@@ -48,14 +79,35 @@ function App() {
               type="text"
               value={query}
               onChange={handleChange}
+              onKeyDown={handleKeyDown}
               placeholder="Search for a country…"
               autoComplete="off"
+              role="combobox"
+              aria-expanded={suggestions.length > 0}
+              aria-controls="country-suggestions"
+              aria-autocomplete="list"
+              aria-activedescendant={
+                suggestions.length > 0 ? `suggestion-${activeIndex}` : undefined
+              }
             />
           </div>
           {suggestions.length > 0 && (
-            <ul className="suggestions">
-              {suggestions.map((c) => (
-                <li key={c.country} onClick={() => handleSelect(c)}>
+            <ul
+              className="suggestions"
+              id="country-suggestions"
+              role="listbox"
+              ref={listRef}
+            >
+              {suggestions.map((c, i) => (
+                <li
+                  key={c.country}
+                  id={`suggestion-${i}`}
+                  role="option"
+                  aria-selected={i === activeIndex}
+                  className={i === activeIndex ? 'is-active' : undefined}
+                  onMouseEnter={() => setActiveIndex(i)}
+                  onClick={() => handleSelect(c)}
+                >
                   {c.country}
                   <span className="suggestion-region">{c.region}</span>
                 </li>
